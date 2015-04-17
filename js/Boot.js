@@ -33,7 +33,7 @@ BasicGame.Boot.prototype = {
         //  By this point the preloader assets have loaded to the cache, we've set the game settings
         //  So now let's start the real preloader going
         //this.state.start('Preloader');
-        this.state.start('Game');
+        this.state.start('Preloader');
     }
 
 };
