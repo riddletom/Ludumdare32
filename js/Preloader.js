@@ -11,7 +11,11 @@ BasicGame.Preloader = function (game) {
 BasicGame.Preloader.prototype = {
 
 	preload: function () {
+<<<<<<< HEAD
     this.load.spritesheet('detectiv', 'data/insp.png', 34, 56, 10);
+=======
+    	this.load.spritesheet('detectiv', 'data/insp.png', 34, 56);
+>>>>>>> origin/master
 		/*
 		//	These are the assets we loaded in Boot.js
 		//	A nice sparkly background and a loading progress bar
@@ -58,7 +62,11 @@ BasicGame.Preloader.prototype = {
 			this.state.start('MainMenu');
 		}
 		*/
+<<<<<<< HEAD
     this.state.start('Game');
+=======
+		this.state.start('Game');
+>>>>>>> origin/master
 	}
 
 };
