@@ -30,6 +30,9 @@ BasicGame.Game.prototype = {
     create: function () {
         console.log("lancement du jeu");
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+         var detectiv = this.game.add.sprite(300, 200, 'detectiv');
+         detectiv.animations.add('walk');
+         detectiv.animations.play('walk', 20, true);
 
     },
 

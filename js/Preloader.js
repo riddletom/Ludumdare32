@@ -11,6 +11,7 @@ BasicGame.Preloader = function (game) {
 BasicGame.Preloader.prototype = {
 
 	preload: function () {
+    game.load.spritesheet('detectiv', 'data/insp.png', 34, 56, 10);
 		/*
 		//	These are the assets we loaded in Boot.js
 		//	A nice sparkly background and a loading progress bar
