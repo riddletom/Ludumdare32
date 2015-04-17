@@ -28,7 +28,7 @@ BasicGame.Game = function (game) {
 BasicGame.Game.prototype = {
 
     create: function () {
-
+        console.log("lancement du jeu");
         //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
 
     },
