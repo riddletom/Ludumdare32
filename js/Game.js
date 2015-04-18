@@ -29,7 +29,7 @@ BasicGame.Game.prototype = {
 
     create: function () {
         console.log("lancement du jeu");
-        //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+        //  test animations detective
         for (var i=0;i<3;i++) {
              var detectiv = this.game.add.sprite(300+100*i, 200, 'detectiv');
              detectiv.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
@@ -42,11 +42,37 @@ BasicGame.Game.prototype = {
              detectiv.scale.setTo(2,2);
              detectiv.smoothed = false
         }
+
+        // test carpet
+        this.carpets=[];
+        this.compteur=0;
+        for (var i=0;i<10;i++) {
+            var carpet = this.game.add.sprite(100, 100+i*30, 'carpet');
+            carpet.animations.add('normal',[0]);
+            carpet.animations.add('vague',[1]);
+            carpet.play('normal')
+            //carpet.scale.setTo(2,2);
+            //carpet.smoothed = false;
+            this.carpets.push(carpet);
+        }
+
+        this.time.events.loop(Phaser.Timer.SECOND/8 , function() {
+            this.carpets[this.compteur].play('vague');
+            if (this.compteur==0) {
+                this.carpets[this.carpets.length-1].play('normal');
+            } else this.carpets[this.compteur-1].play('normal');
+            this.compteur++;
+            if (this.compteur==this.carpets.length) this.compteur=0;
+        }, this);
+       
+
     },
 
     update: function () {
 
-        //  Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
+
+
+
 
     },
 
