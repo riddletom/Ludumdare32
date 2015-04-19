@@ -29,25 +29,13 @@ BasicGame.Game.prototype = {
 
     create: function () {
         console.log("lancement du jeu");
-        //  test animations detective
-        for (var i=0;i<3;i++) {
-             var detectiv = this.game.add.sprite(300+100*i, 200, 'detectiv');
-             detectiv.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
-             detectiv.animations.add('dos',[6,7,8,9,10,11,10,9,8,7]);
-             detectiv.animations.add('profil',[12,13,14,15,16,17]);
-             if (i==1) {
-                detectiv.animations.play('face', 20, true);
-            } else if (!i) { detectiv.animations.play('dos', 20, true);
-            }else detectiv.animations.play('profil', 15, true);
-             detectiv.scale.setTo(2,2);
-             detectiv.smoothed = false
-        }
+        
 
         // test carpet
         this.carpets=[];
         this.compteur=0;
         for (var i=0;i<10;i++) {
-            var carpet = this.game.add.sprite(100, 100+i*30, 'carpet');
+            var carpet = this.game.add.sprite(415, 100+i*30, 'carpet');
             carpet.animations.add('normal',[0]);
             carpet.animations.add('vague',[1]);
             carpet.play('normal')
@@ -65,6 +53,32 @@ BasicGame.Game.prototype = {
             if (this.compteur==this.carpets.length) this.compteur=0;
         }, this);
        
+       //  test animations detective
+        for (var i=0;i<4;i++) {
+             var detectiv = this.game.add.sprite(300+100*i, 200, 'detectiv');
+             detectiv.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
+             detectiv.animations.add('dos',[6,7,8,9,10,11,10,9,8,7]);
+             detectiv.animations.add('profil',[12,13,14,15,16,17]);
+             detectiv.animations.add('dead',[18,19,20,21]);
+
+             switch (i) {
+                case 0:
+                     detectiv.animations.play('face', 20, true);
+                     break;
+                case 1:
+                    detectiv.animations.play('profil', 15, true);
+                    break;
+                case 2:
+                    detectiv.animations.play('dos', 20, true);
+                    break;
+                case 3:
+                    detectiv.animations.play('dead', 20, true);
+                    break;
+                default:
+             }
+             detectiv.scale.setTo(2,2);
+             detectiv.smoothed = false
+        }
 
     },
 
