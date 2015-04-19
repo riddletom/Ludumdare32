@@ -114,7 +114,7 @@ BasicGame.Game.prototype = {
         for (var i=0;i<10;i++) {
             var carpet = this.game.add.sprite(108, 100+i*30, 'carpet');
             carpet.animations.add('normal',[0]);
-            carpet.animations.add('vague',[1]);
+            carpet.animations.add('vague',[6]);
             carpet.play('normal')
             //carpet.scale.setTo(2,2);
             //carpet.smoothed = false;
