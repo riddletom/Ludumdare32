@@ -30,10 +30,38 @@ BasicGame.Game.prototype = {
     create: function () {
         console.log("lancement du jeu");
         //test parquet 
-        for (var i=0;i<17;i++) {
-            for (var j=0;j<17;j++) {
+        for (var i=0;i<20;i++) {
+            for (var j=0;j<20;j++) {
                 var parquet = this.game.add.sprite(i*30, j*30, 'parquet');
-                
+
+            }
+        }
+
+        //test murs
+        for (var i=0;i<20;i++) { 
+            var mur = this.game.add.sprite(15+i*30, 15, 'mur');
+            mur.anchor.setTo(0.5,0.5);
+            var mur2 = this.game.add.sprite(15+i*30, 15+570, 'mur');
+            mur2.anchor.setTo(0.5,0.5);
+            mur2.rotation = Math.PI;
+            if (i==0 || i==19) {
+                mur.animations.add('coin',[1]);
+                mur.play('coin');
+                mur2.animations.add('coin',[1]);
+                mur2.play('coin');
+                mur2.rotation = Math.PI/2;
+                if(i==0) {
+                    mur.rotation = Math.PI /2*3;
+                    mur2.rotation = Math.PI;
+                }
+            } else {
+                // côtés
+                var mur3 = this.game.add.sprite(15, 15+i*30, 'mur');
+                var mur4 = this.game.add.sprite(585, 15+i*30, 'mur');
+                mur3.anchor.setTo(0.5,0.5);
+                mur4.anchor.setTo(0.5,0.5);
+                mur3.rotation = Math.PI/2*3;
+                mur4.rotation = Math.PI/2;
             }
         }
 
