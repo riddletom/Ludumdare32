@@ -13,6 +13,7 @@ BasicGame.Preloader.prototype = {
 	preload: function () {
 
     this.load.spritesheet('detectiv', 'data/player.png', 30, 40);
+    this.load.spritesheet('carpet', 'data/carpet1.png', 30, 30);
 
 		/*
 		//	These are the assets we loaded in Boot.js
