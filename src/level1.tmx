@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="30" tileheight="30" nextobjectid="1">
+ <tileset firstgid="1" name="carpet1" tilewidth="30" tileheight="30">
+  <image source="../data/carpet1.png" width="180" height="60"/>
+ </tileset>
+ <tileset firstgid="13" name="carrelage" tilewidth="30" tileheight="30">
+  <image source="../data/carrelage.png" width="120" height="60"/>
+ </tileset>
+ <tileset firstgid="21" name="mur" tilewidth="30" tileheight="30">
+  <image source="../data/mur.png" width="120" height="240"/>
+ </tileset>
+ <layer name="sol" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4ByIEwEHjVv1LyhYt4oIA4AAP8ZBgQ=
+  </data>
+ </layer>
+ <layer name="mur" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIw1oArEsEViOSPOMiVRnOMzMM2DAHm4Gg8R9g908IygGAQMsYgPlPg0kd+DD6kSaN5wBAJFjCMs=
+  </data>
+ </layer>
+ <layer name="tapis" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2BwAjYgZsKCWQbSUUMIjIbfKKA1AAB9MAAp
+  </data>
+ </layer>
+</map>
