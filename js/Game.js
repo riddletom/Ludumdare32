@@ -96,29 +96,29 @@ BasicGame.Game.prototype = {
        
        //  test animations detective
         for (var i=0;i<4;i++) {
-             var detectiv = this.game.add.sprite(100+100*i, 200, 'detectiv');
-             detectiv.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
-             detectiv.animations.add('dos',[6,7,8,9,10,11,10,9,8,7]);
-             detectiv.animations.add('profil',[12,13,14,15,16,17]);
-             detectiv.animations.add('dead',[18,19,20,21]);
+             var player = this.game.add.sprite(100+100*i, 200, 'player');
+             player.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
+             player.animations.add('dos',[6,7,8,9,10,11,10,9,8,7]);
+             player.animations.add('profil',[12,13,14,15,16,17]);
+             player.animations.add('dead',[18,19,20,21]);
 
              switch (i) {
                 case 0:
-                     detectiv.animations.play('face', 20, true);
+                     player.animations.play('face', 20, true);
                      break;
                 case 1:
-                    detectiv.animations.play('profil', 15, true);
+                    player.animations.play('profil', 15, true);
                     break;
                 case 2:
-                    detectiv.animations.play('dos', 20, true);
+                    player.animations.play('dos', 20, true);
                     break;
                 case 3:
-                    detectiv.animations.play('dead', 20, true);
+                    player.animations.play('dead', 20, true);
                     break;
                 default:
              }
-             detectiv.scale.setTo(1.5,1.5);
-             detectiv.smoothed = false
+             player.scale.setTo(1.5,1.5);
+             player.smoothed = false
         }
 
     },
