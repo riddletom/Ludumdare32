@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="30" tileheight="30" nextobjectid="1">
  <tileset firstgid="1" name="carrelage" tilewidth="30" tileheight="30">
-  <image source="../data/carrelage.png" width="120" height="60"/>
+  <image source="../data/carrelage.png" width="60" height="90"/>
  </tileset>
  <tileset firstgid="13" name="mur" tilewidth="30" tileheight="30">
   <image source="../data/mur.png" width="60" height="120"/>
@@ -14,7 +14,7 @@
  </tileset>
  <layer name="sol" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYBzEmBaAiUp41LxR80bNGzVvqJlHTQAATPkCaQ==
+   eJxjYBh5gIlKeNS8UfNGzRs1b6iZR00AAF8aAkE=
   </data>
  </layer>
  <layer name="mur" width="20" height="20">
