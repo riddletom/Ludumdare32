@@ -13,8 +13,7 @@ BasicGame.Preloader.prototype = {
 	preload: function () {
 
     //this.load.spritesheet('player', 'data/player.png', 30, 40);
-    //this.load.spritesheet('player', 'data/customer1.png', 30, 40);
-    this.load.spritesheet('player', 'data/customer2.png', 30, 40);
+    this.load.spritesheet('player', 'data/customer1.png', 30, 40);
     this.load.spritesheet('carpet', 'data/carpet1.png', 30, 30);
     //this.load.spritesheet('parquet', 'data/parquet.png', 30, 30);
     this.load.spritesheet('parquet', 'data/carrelage.png', 30, 30);
