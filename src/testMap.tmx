@@ -11,6 +11,11 @@
  </tileset>
  <tileset firstgid="29" name="carpet1" tilewidth="30" tileheight="30">
   <image source="../data/carpet1.png" width="180" height="60"/>
+  <tile id="1">
+   <properties>
+    <property name="type" value="H"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="sol" width="20" height="20">
   <data encoding="base64" compression="zlib">
