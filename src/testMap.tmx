@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="30" tileheight="30" nextobjectid="1">
  <tileset firstgid="1" name="carrelage" tilewidth="30" tileheight="30">
-  <image source="../data/carrelage.png" width="60" height="90"/>
+  <image source="../data/carrelage.png" width="120" height="60"/>
  </tileset>
- <tileset firstgid="7" name="mur" tilewidth="30" tileheight="30">
-  <image source="../data/mur.png" width="60" height="120"/>
+ <tileset firstgid="9" name="mur" tilewidth="30" tileheight="30">
+  <image source="../data/mur.png" width="120" height="120"/>
  </tileset>
- <tileset firstgid="15" name="carpet2" tilewidth="30" tileheight="30">
+ <tileset firstgid="25" name="carpet2" tilewidth="30" tileheight="30">
   <image source="../data/carpet2.png" width="60" height="60"/>
+ </tileset>
+ <tileset firstgid="29" name="carpet1" tilewidth="30" tileheight="30">
+  <image source="../data/carpet1.png" width="180" height="60"/>
  </tileset>
  <layer name="sol" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBh5gJlKeNS8UfNGzRs1b6iZR00AAIuHA2E=
+   eJxjYBh5gIlKeNS8UfNGzRs1b6iZR00AAF8aAkE=
   </data>
  </layer>
  <layer name="mur" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBjcgA+I2amEuYGYi4pu4xg1b9S8UfNGzRtC5vECMSeVMA8QAwCR1gJz
+   eJxjYBjcQAyI+amEhYFYiIpuExg1b9S8UfNGzRtC5okCsSCVsAgQAwDqsASz
   </data>
  </layer>
  <layer name="tapis" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFQw0IUtk8/lHzRs0bNY9u5g0nAAAMhgC3
+   eJxjYBgF1ABKQCxHJlYg0S55qrgYAWQp0IvNLZSYh03vUDAPX/wrDAL3jZo3MOYpEik2VAEAGxEFoQ==
   </data>
  </layer>
 </map>
