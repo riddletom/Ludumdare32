@@ -27,8 +27,51 @@ BasicGame.Game = function (game) {
 
 BasicGame.Game.prototype = {
 
+
+
     create: function () {
         console.log("lancement du jeu");
+
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);
+
+
+        //create map
+        map = this.game.add.tilemap('map');
+        map.addTilesetImage('mur');
+        map.addTilesetImage('carrelage');
+        map.addTilesetImage('carpet1');
+        
+        //create layer
+        sollayer = map.createLayer('sol');
+        murLayer = map.createLayer('mur');
+        tapisLayer = map.createLayer('tapis');
+
+        //collision on blockedLayer
+        map.setCollisionBetween(1, 200, true, 'mur');
+        
+        //create player
+        player = this.game.add.sprite(260, 200, 'player');
+        player.anchor.set(0.5,0.5);
+        player.direction=6;
+
+             //player animations
+            player.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
+            player.animations.add('dos',[6,7,8,9,10,11,10,9,8,7]);
+            player.animations.add('profil',[12,13,14,15,16,17]);
+            player.animations.add('dead',[18,19,20,21]);
+        
+            //player physics
+            this.game.physics.enable(player);
+            player.body.bounce.x = 0;
+            player.body.bounce.y = 0;
+            player.body.setSize(12,6,0,8);
+
+        //  Our controls.
+        cursors = this.game.input.keyboard.createCursorKeys();
+
+ 
+    
+        /*
         //test parquet 
         for (var i=0;i<20;i++) {
             for (var j=0;j<20;j++) {
@@ -119,15 +162,87 @@ BasicGame.Game.prototype = {
              }
              player.scale.setTo(1.5,1.5);
              player.smoothed = false
-        }
+        }*/
 
     },
 
     update: function () {
+    var stop =false;
+            //collision 
+    this.game.physics.arcade.collide(player,murLayer,function(){
+
+
+        switch (player.direction) {
+                case 0:
+                     player.frame = 9;
+                     break;
+                case 3:
+                    player.frame = 16;
+                    break;
+                case 6:
+                    player.frame = 3;
+                    break;
+                case 9:
+                    player.frame = 16;
+                    break;
+                default:
+             }
+        player.animations.stop();
+        stop=true;
 
 
 
+    },null,this);
 
+    //player management
+    player.body.velocity.x = 0;
+    player.body.velocity.y = 0;   
+
+    if (cursors.left.isDown&&!stop)
+    {
+        //  Move to the left
+        player.direction=9; //heure sur une horloge
+        player.body.velocity.x = -150;
+        player.animations.play('profil');
+        if (player.scale.x < 0)
+            {player.scale.x*=-1;}
+
+    }
+    else if (cursors.right.isDown)
+    {
+        //  Move to the right
+        player.direction=3;
+        player.body.velocity.x = 150;
+        if (player.scale.x>0)
+           {player.scale.x*=-1;}
+
+        player.animations.play('profil');
+
+    }
+
+    if (cursors.down.isDown)
+    {
+        //  Move down
+        player.direction=6;
+        player.body.velocity.y = 150;
+        player.animations.play('face');
+    }
+    else if (cursors.up.isDown)
+    {
+        //  Move up
+        player.direction=0;
+        player.body.velocity.y = -150;
+
+        player.animations.play('dos');
+    }
+    
+
+
+    },
+
+    render: function (pointer){
+
+    this.game.debug.body(player);
 
     },
 
