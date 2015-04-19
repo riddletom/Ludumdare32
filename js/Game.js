@@ -29,19 +29,32 @@ BasicGame.Game.prototype = {
 
     create: function () {
         console.log("lancement du jeu");
-        
+        //test parquet 
+        for (var i=0;i<17;i++) {
+            for (var j=0;j<17;j++) {
+                var parquet = this.game.add.sprite(i*30, j*30, 'parquet');
+                
+            }
+        }
 
         // test carpet
         this.carpets=[];
         this.compteur=0;
         for (var i=0;i<10;i++) {
-            var carpet = this.game.add.sprite(415, 100+i*30, 'carpet');
+            var carpet = this.game.add.sprite(108, 100+i*30, 'carpet');
             carpet.animations.add('normal',[0]);
             carpet.animations.add('vague',[1]);
             carpet.play('normal')
             //carpet.scale.setTo(2,2);
             //carpet.smoothed = false;
             this.carpets.push(carpet);
+        }
+        for (var i=0;i<10;i++) {
+            var carpet = this.game.add.sprite(408, 100+i*30, 'carpet');
+            carpet.animations.add('normal',[0]);
+            carpet.play('normal')
+            //carpet.scale.setTo(2,2);
+            //carpet.smoothed = false;
         }
 
         this.time.events.loop(Phaser.Timer.SECOND/8 , function() {
@@ -55,7 +68,7 @@ BasicGame.Game.prototype = {
        
        //  test animations detective
         for (var i=0;i<4;i++) {
-             var detectiv = this.game.add.sprite(300+100*i, 200, 'detectiv');
+             var detectiv = this.game.add.sprite(100+100*i, 200, 'detectiv');
              detectiv.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
              detectiv.animations.add('dos',[6,7,8,9,10,11,10,9,8,7]);
              detectiv.animations.add('profil',[12,13,14,15,16,17]);
@@ -76,7 +89,7 @@ BasicGame.Game.prototype = {
                     break;
                 default:
              }
-             detectiv.scale.setTo(2,2);
+             detectiv.scale.setTo(1.5,1.5);
              detectiv.smoothed = false
         }
 
