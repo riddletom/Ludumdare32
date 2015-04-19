@@ -45,10 +45,10 @@ BasicGame.Game.prototype = {
             mur2.anchor.setTo(0.5,0.5);
             mur2.rotation = Math.PI;
             if (i==0 || i==19) {
-                mur.animations.add('coin',[1]);
-                mur.play('coin');
-                mur2.animations.add('coin',[1]);
-                mur2.play('coin');
+                mur.animations.add('angle',[1]);
+                mur.play('angle');
+                mur2.animations.add('angle',[1]);
+                mur2.play('angle');
                 mur2.rotation = Math.PI/2;
                 if(i==0) {
                     mur.rotation = Math.PI /2*3;
@@ -94,7 +94,7 @@ BasicGame.Game.prototype = {
             if (this.compteur==this.carpets.length) this.compteur=0;
         }, this);
        
-       //  test animations detective
+       //  test animations player
         for (var i=0;i<4;i++) {
              var player = this.game.add.sprite(100+100*i, 200, 'player');
              player.animations.add('face',[0,1,2,3,4,5,4,3,2,1]);
